@@ -36,7 +36,7 @@ namespace portfolio.LinkedList
         [Test]
         public void RemoveBeginning()
         {
-            
+            var list = new LinkedList<int>();
         }
 
         [Test]
