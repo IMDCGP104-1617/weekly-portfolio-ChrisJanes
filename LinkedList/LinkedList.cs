@@ -12,6 +12,8 @@ namespace portfolio.LinkedList
     {
         public int Length { get; private set; }
 
+        private Node<T> head;
+
         public class Node<T>
         {
             public T Data;
@@ -20,7 +22,18 @@ namespace portfolio.LinkedList
 
         public void InsertBeginning(T value)
         {
-            throw new NotImplementedException();
+            Length++;
+            var newNode = new LinkedList<T>.Node<T> {Data = value};
+
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                newNode.NextNode = head;
+                head = newNode;
+            }
         }
 
         public void InsertAfter(int index, T value)
