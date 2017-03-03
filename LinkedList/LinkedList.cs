@@ -38,7 +38,24 @@ namespace portfolio.LinkedList
 
         public void InsertAfter(int index, T value)
         {
-            throw new NotImplementedException();
+            if (Length == 0 || index >= Length)
+                throw new IndexOutOfRangeException();
+
+            var current = 0;
+            var returnNode = head;
+            var newNode = new LinkedList<T>.Node<T>() {Data = value};
+
+            while (current != index)
+            {
+                returnNode = returnNode.NextNode;
+
+                current++;
+            }
+
+            newNode.NextNode = returnNode.NextNode;
+            returnNode.NextNode = newNode;
+
+            Length++;
         }
 
         public T At(int index)
@@ -61,12 +78,31 @@ namespace portfolio.LinkedList
 
         public void RemoveBeginning()
         {
-            throw new NotImplementedException();
+            if (Length == 0 || head == null)
+                return;
+
+            head = head.NextNode;
+            Length--;
         }
 
         public void RemoveAfter(int index)
         {
-            throw new NotImplementedException();
+            if (Length == 0 || index >= Length)
+                throw new IndexOutOfRangeException();
+
+            var current = 0;
+            var returnNode = head;
+
+            while (current != index)
+            {
+                returnNode = returnNode.NextNode;
+
+                current++;
+            }
+
+            returnNode.NextNode = returnNode.NextNode.NextNode;
+
+            Length--;
         }
     }
 }

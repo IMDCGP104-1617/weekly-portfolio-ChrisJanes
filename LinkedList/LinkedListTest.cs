@@ -54,9 +54,9 @@ namespace portfolio.LinkedList
         {
             var list = new LinkedList<int>();
 
-            list.InsertBeginning(10);
-            list.InsertBeginning(9);
             list.InsertBeginning(8);
+            list.InsertBeginning(9);
+            list.InsertBeginning(10);
 
             list.RemoveAfter(0);
 
