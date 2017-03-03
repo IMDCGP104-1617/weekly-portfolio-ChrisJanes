@@ -6,4 +6,4 @@ before_install:
 
 script:
 - xbuild /p:Configuration=Release portfolio.sln
-- mono ./packages/xunit.runners.*/tools/xunit.console.clr4.exe ./bin/Release/portfolio.exe
+- mono ./packages/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./bin/Release/portfolio.exe
