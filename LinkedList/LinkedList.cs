@@ -43,7 +43,20 @@ namespace portfolio.LinkedList
 
         public T At(int index)
         {
-            throw new NotImplementedException();
+            if ( Length == 0 || index >= Length)
+                throw new IndexOutOfRangeException();
+
+            var current = 0;
+            var returnNode = head;
+
+            while (current != index)
+            {
+                returnNode = returnNode.NextNode;
+
+                current++;
+            }
+
+            return returnNode.Data;
         }
 
         public void RemoveBeginning()
