@@ -8,7 +8,7 @@ using NUnit.Framework.Constraints;
 namespace portfolio.LinkedList
 {
 
-    class LinkedList<T>
+    public class LinkedList<T>
     {
         public int Length { get; private set; }
 
@@ -29,6 +29,16 @@ namespace portfolio.LinkedList
         }
 
         public T At(int index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveBeginning()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveAfter(int index)
         {
             throw new NotImplementedException();
         }
