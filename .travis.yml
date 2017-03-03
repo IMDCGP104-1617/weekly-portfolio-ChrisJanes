@@ -1,5 +1,8 @@
 language: csharp
 
+before_install:
+- sudo apt-get -qq update
+
 script:
 - xbuild /p:Configuration=Release portfolio.sln
 - mono ./packages/xunit.runners.*/tools/xunit.console.clr4.exe ./bin/Release/portfolio.exe
