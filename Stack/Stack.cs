@@ -18,7 +18,6 @@ namespace portfolio.Stack
             stackList = new LinkedList<T>();
         }
 
-
         public void Push(T value)
         {
             stackList.InsertBeginning(value);

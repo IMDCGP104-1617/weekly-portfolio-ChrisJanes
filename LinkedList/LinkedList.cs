@@ -38,18 +38,27 @@ namespace portfolio.LinkedList
 
         public void InsertAfter(int index, T value)
         {
-            if (Length == 0 || index >= Length)
+            if (index >= Length)
                 throw new IndexOutOfRangeException();
 
             var current = 0;
             var returnNode = Head;
             var newNode = new LinkedList<T>.Node<T>() {Data = value};
 
-            while (current != index)
+            if (returnNode == null)
             {
-                returnNode = returnNode.NextNode;
+                InsertBeginning(value);
+                return;
+            }
 
-                current++;
+            if (index > 0)
+            {
+                while (current != index)
+                {
+                    returnNode = returnNode.NextNode;
+
+                    current++;
+                }
             }
 
             newNode.NextNode = returnNode.NextNode;
@@ -100,9 +109,12 @@ namespace portfolio.LinkedList
                 current++;
             }
 
-            returnNode.NextNode = returnNode.NextNode.NextNode;
+            if (returnNode.NextNode != null)
+            {
+                returnNode.NextNode = returnNode.NextNode.NextNode;
 
-            Length--;
+                Length--;
+            }
         }
     }
 }
