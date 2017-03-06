@@ -51,6 +51,7 @@
     <Compile Include="LinkedList\LinkedListTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stack\Stack.cs" />
     <Compile Include="Stack\StackTest.cs" />
   </ItemGroup>
   <ItemGroup>

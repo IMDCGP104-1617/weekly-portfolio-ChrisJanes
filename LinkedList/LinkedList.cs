@@ -12,7 +12,7 @@ namespace portfolio.LinkedList
     {
         public int Length { get; private set; }
 
-        private Node<T> head;
+        public Node<T> Head { get; private set; }
 
         public class Node<T>
         {
@@ -25,14 +25,14 @@ namespace portfolio.LinkedList
             Length++;
             var newNode = new LinkedList<T>.Node<T> {Data = value};
 
-            if (head == null)
+            if (Head == null)
             {
-                head = newNode;
+                Head = newNode;
             }
             else
             {
-                newNode.NextNode = head;
-                head = newNode;
+                newNode.NextNode = Head;
+                Head = newNode;
             }
         }
 
@@ -42,7 +42,7 @@ namespace portfolio.LinkedList
                 throw new IndexOutOfRangeException();
 
             var current = 0;
-            var returnNode = head;
+            var returnNode = Head;
             var newNode = new LinkedList<T>.Node<T>() {Data = value};
 
             while (current != index)
@@ -64,7 +64,7 @@ namespace portfolio.LinkedList
                 throw new IndexOutOfRangeException();
 
             var current = 0;
-            var returnNode = head;
+            var returnNode = Head;
 
             while (current != index)
             {
@@ -78,10 +78,10 @@ namespace portfolio.LinkedList
 
         public void RemoveBeginning()
         {
-            if (Length == 0 || head == null)
+            if (Length == 0 || Head == null)
                 return;
 
-            head = head.NextNode;
+            Head = Head.NextNode;
             Length--;
         }
 
@@ -91,7 +91,7 @@ namespace portfolio.LinkedList
                 throw new IndexOutOfRangeException();
 
             var current = 0;
-            var returnNode = head;
+            var returnNode = Head;
 
             while (current != index)
             {
